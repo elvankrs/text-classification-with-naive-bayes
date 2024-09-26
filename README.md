@@ -34,7 +34,7 @@ python main.py data_path multinomial-nb
 To train and evaluate the multivariate Bernoulli Naive Bayes model:
 
 ```
-- python main.py data_path bernoulli-nb
+python main.py data_path bernoulli-nb
 ```
 
 For training both models with the best hyperparameters and running the randomization test:
