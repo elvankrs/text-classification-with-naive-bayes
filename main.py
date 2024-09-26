@@ -64,8 +64,6 @@ all_doc_ids = list(all_doc_ids)
 word_doc_dict = {token: {doc_id: False for doc_id in all_doc_ids} for token in all_tokens}
 # Set the default values to False for now
 
-####### buraya kadar düzelttim
-
 train_class_docs, dev_class_docs, test_class_docs = dict(), dict(), dict()
 dev_docs, test_docs = [], []
 train_term_dict, train_dev_term_dict = {}, {} # train_term_dict[class][term] = term_freq
@@ -184,9 +182,7 @@ if (model_type == "bernoulli-nb") or (model_type == "all"):
 
     alphas = [0.5, 1, 2]
     for alpha in alphas:
-      # train_bernoulli_nb(vocabulary, train_class_docs, topic_dict, bernoulli_dict, alpha)
       bernoulli_class_conditional_dict = train_bernoulli_nb(vocabulary, train_class_docs, train_topic_dict, bernoulli_train_dict, alpha)
-      # apply_bernoulli_nb(docs, top_10_topics, unique_vocabulary, word_doc_dict, p_c, p_w_given_c)
       targets_bernoulli, preds_bernoulli = apply_bernoulli_nb(dev_docs, top_10_topics, unique_vocabulary, word_doc_dict, p_c, bernoulli_class_conditional_dict)
       print(f"\nMultivariate Bernoulli Naive Bayes with alpha = {alpha}. Performance on the dev set:")
       evaluate(targets_bernoulli, preds_bernoulli)  
