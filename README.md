@@ -14,7 +14,7 @@ The models are evaluated using micro and macro F-scores on the development and t
 
 ## Results
 
-Multinomial NB: Micro F1 = 0.929, Macro F1 = 0.639
+Multinomial NB: Micro F1 = 0.932, Macro F1 = 0.664
 Mutlivariate Bernoulli NB: Micro F1 = 0.851, Macro F1 = 0.499
 
 The multinomial Naive Bayes model performs significantly better, as confirmed by the p-value (0.001) from the randomization test.
